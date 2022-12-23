@@ -6,6 +6,10 @@ const getUsers = (users) => ({
     payload: users,
 });
 
+const userDeleted = () => ({
+    type: types.DELETE_USER
+});
+
 export const loadUsers = () => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_API}`).then((resp) => {
@@ -15,3 +19,11 @@ export const loadUsers = () => {
     }
 }
 
+export const deleteUser = (id) => {
+    return function (dispatch) {
+        axios.delete(`${process.env.REACT_APP_API}${id}`).then((resp) => {
+            console.log('resp :', resp)
+            dispatch(userDeleted());
+        }).catch(error => console.log(error))
+    }
+}
