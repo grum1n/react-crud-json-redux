@@ -37,6 +37,7 @@ export const addUser = (user) => {
         axios.post(`${process.env.REACT_APP_API}`, user).then((resp) => {
             console.log('resp :', resp)
             dispatch(userAdded());
+            dispatch(loadUsers());
         }).catch(error => console.log(error))
     }
 }
