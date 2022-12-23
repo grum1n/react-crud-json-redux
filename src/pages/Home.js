@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadUsers } from '../redux/actions';
+import { Button, ButtonGroup } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -60,7 +61,12 @@ const Home = () => {
               <StyledTableCell align="center">{user.email}</StyledTableCell>
               <StyledTableCell align="center">{user.contact}</StyledTableCell>
               <StyledTableCell align="center">{user.address}</StyledTableCell>
-              <StyledTableCell align="center"></StyledTableCell>
+              <StyledTableCell align="center">
+                <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                    <Button color="secondary">Delete</Button>
+                    <Button color="primary">Edit</Button>
+                </ButtonGroup>
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
