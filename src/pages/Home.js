@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteUser, loadUsers } from '../redux/actions';
 import { Button, ButtonGroup } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -34,6 +35,8 @@ const Home = () => {
 
     let dispatch = useDispatch();
 
+    const navigate = useNavigate();
+
     const {users} = useSelector(state => state.data);
 
     useEffect(() => {
@@ -49,7 +52,7 @@ const Home = () => {
     return (
       <div>
         <div style={{ margin: '20px' }}>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={() => navigate('/adduser')}>
               Add User
           </Button>
         </div>
