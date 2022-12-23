@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadUsers } from '../redux/actions';
+import { deleteUser, loadUsers } from '../redux/actions';
 import { Button, ButtonGroup } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -39,6 +39,12 @@ const Home = () => {
     useEffect(() => {
         dispatch(loadUsers());
     }, []);
+
+    const handleDelete = (id) => {
+      if(window.confirm("Are you sure wanted to delete the user ?")){
+        dispatch(deleteUser(id));
+      }
+    };
     
     return (
     <TableContainer component={Paper}>
@@ -63,7 +69,11 @@ const Home = () => {
               <StyledTableCell align="center">{user.address}</StyledTableCell>
               <StyledTableCell align="center">
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                    <Button color="secondary">Delete</Button>
+                    <Button 
+                      color="secondary"
+                      onClick={() => handleDelete(user.id)}
+
+                    >Delete</Button>
                     <Button color="primary">Edit</Button>
                 </ButtonGroup>
               </StyledTableCell>
