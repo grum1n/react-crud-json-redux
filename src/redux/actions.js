@@ -9,6 +9,9 @@ const getUsers = (users) => ({
 const userDeleted = () => ({
     type: types.DELETE_USER
 });
+const userAdded = () => ({
+    type: types.ADD_USER
+});
 
 export const loadUsers = () => {
     return function (dispatch) {
@@ -25,6 +28,15 @@ export const deleteUser = (id) => {
             console.log('resp :', resp)
             dispatch(userDeleted());
             dispatch(loadUsers()); //update users data fron json server
+        }).catch(error => console.log(error))
+    }
+}
+
+export const addUser = (user) => {
+    return function (dispatch) {
+        axios.post(`${process.env.REACT_APP_API}`, user).then((resp) => {
+            console.log('resp :', resp)
+            dispatch(userAdded());
         }).catch(error => console.log(error))
     }
 }
