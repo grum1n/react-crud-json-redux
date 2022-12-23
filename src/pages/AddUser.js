@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../redux/actions';
 
 const AddUser = () => {
     const [state, setState] = useState({
@@ -13,6 +15,8 @@ const AddUser = () => {
     });
 
     const [error, setError] = useState('') ;
+
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
@@ -27,6 +31,10 @@ const AddUser = () => {
         e.preventDefault();
         if(!name || !email || !contact || !address ){
             setError('Please input all input fields');
+        } else {
+            dispatch(addUser(state));
+            navigate('/');
+            setError('');
         }
 
 
@@ -38,6 +46,7 @@ const AddUser = () => {
                 Go back
             </Button>
             <h1>AddUser</h1>
+            {error && <h3 style={{ color: 'red' }}>{error}</h3>}
             <Box
                 component="form"
                 sx={{
@@ -47,11 +56,11 @@ const AddUser = () => {
                 autoComplete="off"
                 onSubmit={handleSubmit}
                 >
-                <TextField type="text" id="outlined-basic" label="Name" variant="outlined" value={name}  onChange={handleInputChange} /><br />
-                <TextField type="email" id="outlined-basic" label="Email" variant="outlined" value={email}  onChange={handleInputChange}/><br />
-                <TextField type="number" id="outlined-basic" label="Contact" variant="outlined" value={contact}  onChange={handleInputChange}/><br />
-                <TextField type="text" id="outlined-basic" label="Address" variant="outlined" value={address}  onChange={handleInputChange}/><br />
-                <Button variant="contained" color="primary" onClick={() => {}} style={{ padding: '15px' }}>
+                <TextField type="text" id="outlined-basic" label="Name" variant="outlined" name="name" value={name}  onChange={handleInputChange} /><br />
+                <TextField type="email" id="outlined-basic" label="Email" variant="outlined" name="email"  value={email}  onChange={handleInputChange}/><br />
+                <TextField type="number" id="outlined-basic" label="Contact" variant="outlined" name="contact"  value={contact}  onChange={handleInputChange}/><br />
+                <TextField type="text" id="outlined-basic" label="Address" variant="outlined" name="address"  value={address}  onChange={handleInputChange}/><br />
+                <Button variant="contained" color="primary" onClick={handleSubmit} style={{ padding: '15px' }}>
                     Add User
                 </Button>
             </Box>
