@@ -7,6 +7,9 @@ npm i react-redux redux redux-logger redux-thunk
 npm install @mui/material @emotion/react @emotion/styled
 npm i -g json-server
 
+npm run server
+** server run on http://localhost:5000/user **
+
 
 links:
 https://www.npmjs.com/search?q=json
