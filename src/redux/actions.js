@@ -21,9 +21,10 @@ export const loadUsers = () => {
 
 export const deleteUser = (id) => {
     return function (dispatch) {
-        axios.delete(`${process.env.REACT_APP_API}${id}`).then((resp) => {
+        axios.delete(`${process.env.REACT_APP_API}/${id}`).then((resp) => {
             console.log('resp :', resp)
             dispatch(userDeleted());
+            dispatch(loadUsers()); //update users data fron json server
         }).catch(error => console.log(error))
     }
 }
