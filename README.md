@@ -2,6 +2,7 @@
 react-crud-json-redux
 
 npx create-react-app react-crud-json-redux
+npm i react-router-dom
 npm i axios
 npm i react-redux redux redux-logger redux-thunk
 npm install @mui/material @emotion/react @emotion/styled
