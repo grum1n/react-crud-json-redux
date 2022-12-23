@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,6 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadUsers } from '../redux/actions';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -28,7 +30,14 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
 const Home = () => {
-  return (
+
+    let dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loadUsers());
+    }, []);
+    
+    return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 900 }} aria-label="customized table">
         <TableHead>
