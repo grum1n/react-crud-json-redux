@@ -1,25 +1,18 @@
 {
-    "user": [
-        {
-            "name": "Adam test",
-            "address": "UK London",
-            "email": "SADDDdam@gmail.com",
-            "contact": "00118367367",
-            "id": 1
-        },
-        {
-            "name": "Tommy Lee",
-            "address": "Japan",
-            "email": "tom@gmail.com",
-            "contact": "0218367367",
-            "id": 2
-        },
-        {
-            "name": "Jane",
-            "address": "Australia",
-            "email": "jane@gmail.com",
-            "contact": "33528367367",
-            "id": 3
-        }
-    ]
-  }
+  "user": [
+    {
+      "name": "Adam test",
+      "address": "UK London",
+      "email": "SADDDdam@gmail.com",
+      "contact": "00118367367",
+      "id": 1
+    },
+    {
+      "name": "Tommy Lee",
+      "address": "Japan",
+      "email": "tom@gmail.com",
+      "contact": "0218367367",
+      "id": 2
+    }
+  ]
+}

@@ -47,41 +47,49 @@ const Home = () => {
     };
     
     return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 900 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Name</StyledTableCell>
-            <StyledTableCell align="center">Email</StyledTableCell>
-            <StyledTableCell align="center">Contact</StyledTableCell>
-            <StyledTableCell align="center">Address</StyledTableCell>
-            <StyledTableCell align="center">Action</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {users && users.map((user) => (
-            <StyledTableRow key={user.id}>
-              <StyledTableCell component="th" scope="row">
-                {user.name}
-              </StyledTableCell>
-              <StyledTableCell align="center">{user.email}</StyledTableCell>
-              <StyledTableCell align="center">{user.contact}</StyledTableCell>
-              <StyledTableCell align="center">{user.address}</StyledTableCell>
-              <StyledTableCell align="center">
-                <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                    <Button 
-                      color="secondary"
-                      onClick={() => handleDelete(user.id)}
+      <div>
+        <div style={{ margin: '20px' }}>
+          <Button variant="contained" color="primary">
+              Add User
+          </Button>
+        </div>
 
-                    >Delete</Button>
-                    <Button color="primary">Edit</Button>
-                </ButtonGroup>
-              </StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 900 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell align="center">Email</StyledTableCell>
+                <StyledTableCell align="center">Contact</StyledTableCell>
+                <StyledTableCell align="center">Address</StyledTableCell>
+                <StyledTableCell align="center">Action</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {users && users.map((user) => (
+                <StyledTableRow key={user.id}>
+                  <StyledTableCell component="th" scope="row">
+                    {user.name}
+                  </StyledTableCell>
+                  <StyledTableCell align="center">{user.email}</StyledTableCell>
+                  <StyledTableCell align="center">{user.contact}</StyledTableCell>
+                  <StyledTableCell align="center">{user.address}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                        <Button 
+                          color="secondary"
+                          onClick={() => handleDelete(user.id)}
+
+                        >Delete</Button>
+                        <Button color="primary">Edit</Button>
+                    </ButtonGroup>
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
   )
 }
 
