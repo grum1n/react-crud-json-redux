@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, getSingelUser, updateUser } from '../redux/actions';
+import { getSingelUser, updateUser } from '../redux/actions';
 
 const EditUser = () => {
     const [state, setState] = useState({
@@ -47,7 +47,7 @@ const EditUser = () => {
         if(!name || !email || !contact || !address ){
             setError('Please input all input fields');
         } else {
-            dispatch(updateUser());
+            dispatch(updateUser(state, id));
             navigate('/');
             setError('');
         }
