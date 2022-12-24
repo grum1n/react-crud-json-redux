@@ -13,6 +13,13 @@
       "email": "tom@gmail.com",
       "contact": "0218367367",
       "id": 2
+    },
+    {
+      "name": "Jonas",
+      "email": "jonas@test.com",
+      "contact": "547896",
+      "address": "LT",
+      "id": 3
     }
   ]
 }
