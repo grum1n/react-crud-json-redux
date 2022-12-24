@@ -84,7 +84,7 @@ const Home = () => {
                           onClick={() => handleDelete(user.id)}
 
                         >Delete</Button>
-                        <Button color="primary">Edit</Button>
+                        <Button color="primary"  onClick={() => navigate(`/edituser/${user.id}`)}>Edit</Button>
                     </ButtonGroup>
                   </StyledTableCell>
                 </StyledTableRow>
