@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../redux/actions';
+import { addUser, getSingelUser } from '../redux/actions';
 
 const EditUser = () => {
     const [state, setState] = useState({
@@ -16,11 +16,18 @@ const EditUser = () => {
 
     const [error, setError] = useState('') ;
 
+    const {id} = useParams();
+
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
     const { name, email, contact, address } = state;
+
+    useEffect(() => {
+        dispatch(getSingelUser(id))
+
+    },[]);
 
     const  handleInputChange = (e) => {
         let { name, value } = e.target;

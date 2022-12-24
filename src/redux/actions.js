@@ -14,8 +14,9 @@ const userAdded = () => ({
     type: types.ADD_USER
 });
 
-const getUser = () => ({
-    type: types.GET_SINGEL_USER
+const getUser = (user) => ({
+    type: types.GET_SINGEL_USER,
+    payload: user,
 });
 
 export const loadUsers = () => {
