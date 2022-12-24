@@ -1,25 +1,18 @@
 {
   "user": [
     {
-      "name": "Adam test",
-      "address": "UK London",
-      "email": "SADDDdam@gmail.com",
-      "contact": "00118367367",
-      "id": 1
-    },
-    {
-      "name": "Tommy Lee",
-      "address": "Japan",
-      "email": "tom@gmail.com",
-      "contact": "0218367367",
-      "id": 2
+      "name": "Tomas Tomaitis",
+      "email": "tomastomaotis@test.com",
+      "contact": "6323232",
+      "address": "LV-98564",
+      "id": 4
     },
     {
       "name": "Jonas",
       "email": "jonas@test.com",
-      "contact": "547896",
+      "contact": "98746",
       "address": "LT",
-      "id": 3
+      "id": 5
     }
   ]
 }

@@ -17,6 +17,6 @@ https://www.npmjs.com/search?q=json
 https://mui.com/material-ui/getting-started/installation/
 
 
-stop 1:13
-https://www.youtube.com/watch?v=hXpYQqykORU&t=3917s
+
+
 
